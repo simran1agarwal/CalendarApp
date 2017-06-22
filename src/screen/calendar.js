@@ -25,7 +25,7 @@ class CalendarsScreen extends React.Component {
     }
     months(){
         var monthsItem = [];
-        for(i=0;i<24;i++){
+        for(i=0;i<12;i++){
            var month = Moment().add(i, 'months').format('MMMM YYYY');
            monthsItem.push(
             <MonthItem key={i} month={month} monthsUntil={i} />
