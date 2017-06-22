@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import {
-  Text,
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
+    Text, View, TouchableOpacity, StyleSheet, ScrollView,
 } from 'react-native';
 import Moment from 'moment';
+
 import MonthItem from './src/month_item.js';
 
 class CalendarsScreen extends React.Component {
@@ -17,7 +14,6 @@ class CalendarsScreen extends React.Component {
         return(
             <View>
                 <ScrollView>
-                    <Text>Calendars</Text>
                     {this.months()}
                 </ScrollView>
             </View>
@@ -26,13 +22,13 @@ class CalendarsScreen extends React.Component {
     months(){
         var monthsItem = [];
         for(i=0;i<12;i++){
-           var month = Moment().add(i, 'months').format('MMMM YYYY');
-           monthsItem.push(
-            <MonthItem key={i} month={month} monthsUntil={i} />
-           )
+            var month = Moment().add(i, 'months').format('MMMM YYYY');
+            monthsItem.push(
+                <MonthItem key={i} month={month} monthsUntil={i} />
+            )
         }
-
-        return monthsItem
-      }
+        return monthsItem;
+    }
 }
+
 export default CalendarsScreen;

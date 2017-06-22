@@ -1,20 +1,39 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, View, Alert} from 'react-native';
-import DayItem from './src_day/day_item.js';
 import Moment from 'moment';
+
+import DayItem from './src_day/day_item.js';
 
 export class MonthItem extends Component {
     render(){
         return(
-        <View>
-            <Text style={this.style()}> {this.props.month} </Text>
-            {this.days()}
+        <View style={styles.container}>
+            <Text style={styles.monthText}>
+                {this.props.month}
+            </Text>
+            <View style={styles.weekdayContainer} >
+                {this.weekday()}
+            </View>
+            <View style={styles.dayContainer} >
+                {this.days()}
+            </View>
         </View>
         );
     }
+    weekday(){
+        return(
+        <View style={styles.weekdayContainer} >
+            <Text style={styles.dayText}>S</Text>
+            <Text style={styles.dayText}>M</Text>
+            <Text style={styles.dayText}>T</Text>
+            <Text style={styles.dayText}>W</Text>
+            <Text style={styles.dayText}>T</Text>
+            <Text style={styles.dayText}>F</Text>
+            <Text style={styles.dayText}>S</Text>
+        </View>);
+    }
     days(){
         var daysItem = [];
-        var month;
         var j = this.props.monthsUntil;
         var month = Moment().add(j, 'months').format('MMMM');
 
@@ -22,18 +41,18 @@ export class MonthItem extends Component {
             for(i=0;i<31;i++){
                 var a = Moment('2016-01-01');
                 var day = a.clone().add(i, 'days').format('DD');
-                    daysItem.push(
+                daysItem.push(
                     <DayItem key={i} day={day} daysUntil={i} />
-                    )
+                )
             }
         }
         else if ((month=='April')||(month=='June')||(month=='September')||(month=='November')){
             for(i=0;i<30;i++){
                 var b = Moment('2016-04-01');
-                    var day = b.clone().add(i, 'days').format('DD');
-                        daysItem.push(
-                            <DayItem key={i} day={day} daysUntil={i} />
-                        )
+                var day = b.clone().add(i, 'days').format('DD');
+                daysItem.push(
+                    <DayItem key={i} day={day} daysUntil={i} />
+                )
             }
         }
         else if (month=='February'){
@@ -46,38 +65,51 @@ export class MonthItem extends Component {
             }
             for(i=0;i<n;i++){
                 var d = Moment('2016-04-01');
-                    var day = d.clone().add(i, 'days').format('DD');
-                        daysItem.push(
-                            <DayItem key={i} day={day} daysUntil={i} />
-                        )
+                var day = d.clone().add(i, 'days').format('DD');
+                daysItem.push(
+                    <DayItem key={i} day={day} daysUntil={i} />
+                )
             }
         }
         return daysItem
     }
-
-    style(){
-        return {
-            color: this.color(),
-            fontSize: this.fontSize(),
-            fontWeight: this.fontWeight(),
-            lineHeight: this.lineHeight(),
-        }
-    }
-
-    color(){
-        return 'rgba(0,0,0,1) ';
-    }
-
-    fontSize(){
-        return 20;
-    }
-    fontWeight(){
-        return '100';
-    }
-    lineHeight(){
-        return 40;
-    }
 }
 
+const styles = StyleSheet.create({
+    container: {
+        flex:1,
+        flexDirection: 'column',
+    },
+    monthText: {
+        fontSize:25,
+        fontFamily:'Calibiri',
+        backgroundColor:'rgba(100,255,100,0.25)',
+        flex:1,
+        padding:10,
+    },
+    dayContainer:{
+        flex:5,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        backgroundColor:'rgba(255,255,0,0.25)',
+        flexWrap:'wrap',
+        padding:10,
+        alignContent:'center',
+        paddingLeft:22,
+    },
+    weekdayContainer:{
+            flex:1,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            backgroundColor:'rgba(255,255,0,0.125)',
+            alignContent:'center',
+
+        },
+    dayText: {
+        fontSize:17,
+        fontFamily: 'Calibiri',
+        padding:17,
+    },
+});
 
 module.exports = MonthItem;
