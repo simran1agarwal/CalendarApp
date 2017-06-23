@@ -37,7 +37,7 @@ export class MonthItem extends Component {
         var j = this.props.monthsUntil;
         var month = Moment().add(j, 'months').format('MMMM');
 
-        if ((month=='January')||(month=='March')||(month=='May')||(month=='July')||(month=='August')||(month=='October')||(month=='December')){
+        if (month=='January'){
             for(i=0;i<31;i++){
                 var a = Moment('2016-01-01');
                 var day = a.clone().add(i, 'days').format('DD');
@@ -46,7 +46,90 @@ export class MonthItem extends Component {
                 )
             }
         }
-        else if ((month=='April')||(month=='June')||(month=='September')||(month=='November')){
+        else if (month=='March'){
+            for(i=0;i<31;i++){
+                var a = Moment('2016-01-01');
+                var day = a.clone().add(i, 'days').format('DD');
+                daysItem.push(
+                    <DayItem key={i} day={day} daysUntil={i} />
+                )
+            }
+        }
+        else if (month=='May'){
+            for(i=0;i<31;i++){
+                var a = Moment('2016-01-01');
+                var day = a.clone().add(i, 'days').format('DD');
+                daysItem.push(
+                    <DayItem key={i} day={day} daysUntil={i} />
+                )
+            }
+        }
+        else if (month=='July'){
+            for(i=0;i<31;i++){
+                var a = Moment('2016-01-01');
+                var day = a.clone().add(i, 'days').format('DD');
+                daysItem.push(
+                    <DayItem key={i} day={day} daysUntil={i} />
+                )
+            }
+
+        }
+        else if (month=='August'){
+            for(i=0;i<31;i++){
+                var a = Moment('2016-01-01');
+                var day = a.clone().add(i, 'days').format('DD');
+                daysItem.push(
+                    <DayItem key={i} day={day} daysUntil={i} />
+                )
+            }
+        }
+        else if (month=='October'){
+            for(i=0;i<31;i++){
+                var a = Moment('2016-01-01');
+                var day = a.clone().add(i, 'days').format('DD');
+                daysItem.push(
+                    <DayItem key={i} day={day} daysUntil={i} />
+                )
+            }
+
+        }
+        else if (month=='December'){
+            for(i=0;i<31;i++){
+                var a = Moment('2016-01-01');
+                var day = a.clone().add(i, 'days').format('DD');
+                daysItem.push(
+                    <DayItem key={i} day={day} daysUntil={i} />
+                )
+            }
+        }
+        else if (month=='April'){
+            for(i=0;i<30;i++){
+                var b = Moment('2016-04-01');
+                var day = b.clone().add(i, 'days').format('DD');
+                daysItem.push(
+                    <DayItem key={i} day={day} daysUntil={i} />
+                )
+            }
+        }
+        else if (month=='June'){
+            for(i=0;i<30;i++){
+                var b = Moment('2016-04-01');
+                var day = b.clone().add(i, 'days').format('DD');
+                daysItem.push(
+                    <DayItem key={i} day={day} daysUntil={i} />
+                )
+            }
+        }
+        else if (month=='September'){
+            for(i=0;i<30;i++){
+                var b = Moment('2016-04-01');
+                var day = b.clone().add(i, 'days').format('DD');
+                daysItem.push(
+                    <DayItem key={i} day={day} daysUntil={i} />
+                )
+            }
+        }
+        else if (month=='November'){
             for(i=0;i<30;i++){
                 var b = Moment('2016-04-01');
                 var day = b.clone().add(i, 'days').format('DD');
