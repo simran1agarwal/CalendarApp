@@ -31,10 +31,7 @@ class CalendarsScreen extends React.Component {
     selectionList = () => {
         var dateList = [];
         var j=0;
-        if(){
-            var k=31;
-        }
-        else var k= 30;
+        var k= 30;
         for(i=1;i<10;i++){
             dateList.push(
                 <Text style={styles.dayContainer}>

@@ -8,9 +8,7 @@ export class MonthItem extends Component {
     render(){
         return(
         <View style={styles.container}>
-            <Text style={styles.monthText}>
-                {this.props.month}
-            </Text>
+
             <View style={styles.weekdayContainer} >
                 {this.weekday()}
             </View>
@@ -37,10 +35,17 @@ export class MonthItem extends Component {
         var j = this.props.monthsUntil;
         var month = Moment().add(j, 'months').format('MMMM');
 
+
+
         if (month=='January'){
             for(i=0;i<31;i++){
                 var a = Moment('2016-01-01');
                 var day = a.clone().add(i, 'days').format('DD');
+//                var spaces = parseInt(Moment().weekday());
+//                Alert.alert(spaces);
+/*<Text style={styles.monthText}>
+                {this.props.month}
+            </Text>*/
                 daysItem.push(
                     <DayItem key={i} day={day} daysUntil={i} />
                 )
