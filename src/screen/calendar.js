@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {
-    Text, View, TouchableOpacity, StyleSheet, ScrollView,FlatList,SectionList,ListView,
+    Text, View, TouchableOpacity, StyleSheet, ScrollView,FlatList,SectionList,ListView,Alert,
 } from 'react-native';
 import Moment from 'moment';
 import { Table, TableWraper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
+
+//npm install react-native-simple-table --save
 
 import MonthItem from './src/month_item.js';
 
@@ -15,9 +17,13 @@ class CalendarsScreen extends React.Component {
         return(
             <View style={styles.container}>
                     <SectionList
-
                         sections={this.selectionList()}
-                        renderSectionHeader={({section}) =><View style={styles.header}><Text style={styles.monthText}>{section.key}</Text></View>}
+                        renderSectionHeader={
+                            ({section}) =>
+                                <View style={styles.header}>
+                                    <Text style={styles.monthText}>{section.key}</Text>
+                                </View>
+                        }
                         renderItem={
                             ({item}) =>
                                 <View style={styles.footer}>
@@ -25,19 +31,14 @@ class CalendarsScreen extends React.Component {
                                         {item.titleh}
                                         {item.titled}
                                     </View>
-
                                 </View>
-
                         }
-
                     />
             </View>
         );
     }
     selectionList = () => {
-        var dateList = [];
-        var j=0;
-        var k= 30;
+
         /*for(i=1;i<10;i++){
             dateList.push(
                 <Text style={styles.dayContainer}>
@@ -52,16 +53,7 @@ class CalendarsScreen extends React.Component {
                  </Text>
              );
         }*/
-        var weekdayList = [];
-        var weekday = [];
-        const tableHead = ['S','M', 'T', 'W', 'T','F','S'];
-        const tableData = [
-            ['1', '2', '3', '4','5','6','7'],
-            ['8','9','10','11','12','13','14'],
-            ['15','16','17','18','19','20','21'],
-            ['22','23','24','25','26','27','28'],
-            ['29','30','31','','','',''],
-        ];
+
         /*weekdayList.push(
             <Text style={styles.weekdayContainer}>
                 <Text style={styles.dayText}>S</Text>
@@ -73,25 +65,79 @@ class CalendarsScreen extends React.Component {
                 <Text style={styles.dayText}>S</Text>
             </Text>
         );*/
+        var j=0;
+        var k= 30;
+        var month = [];
+        var year = [];
+        var dateList = [];
+        var weekdayList = [];
+        var weekday = [];
+        var monthArr = [];
+        var tableData = [];
+        for(i=0;i<16;i++){
+            monthArr[i]=Moment().add(i, 'months').format('MMM');
+            month[i]=Moment().add(i, 'months').format('MMMM YYYY');
+            //Alert.alert(monthArr[i]);
+        }
+        for(i=0;i<16;i++){
+            if((monthArr[i]=='Jan')||(monthArr[i]=='Mar')||(monthArr[i]=='May')||(monthArr[i]=='Jul')||(monthArr[i]=='Aug')||(monthArr[i]=='Oct')||(monthArr[i]=='Dec')){
+                //Alert.alert('31');
+                tableData[i] = [
+                    ['1', '2', '3', '4','5','6','7'],
+                    ['8','9','10','11','12','13','14'],
+                    ['15','16','17','18','19','20','21'],
+                    ['22','23','24','25','26','27','28'],
+                    ['29','30','31','','','',''],
+                ];
+            }
+            else if((monthArr[i]=='Apr')||(monthArr[i]=='Jun')||(monthArr[i]=='Sep')||(monthArr[i]=='Nov')){
+                //Alert.alert('30');
+                tableData[i] = [
+                    ['1', '2', '3', '4','5','6','7'],
+                    ['8','9','10','11','12','13','14'],
+                    ['15','16','17','18','19','20','21'],
+                    ['22','23','24','25','26','27','28'],
+                    ['29','30','','','','',''],
+                ];
+            }
+            else if(monthArr[i]=='Feb'){
+                Alert.alert('28');
+                year = Moment().add(i,'months').format('YYYY');
+                if((year%4)==0){
+                    tableData[i] = [
+                        ['1', '2', '3', '4','5','6','7'],
+                        ['8','9','10','11','12','13','14'],
+                        ['15','16','17','18','19','20','21'],
+                        ['22','23','24','25','26','27','28'],
+                        ['29','','','','','',''],
+                    ];
+                }
+                else{
+                    tableData[i] = [
+                        ['1', '2', '3', '4','5','6','7'],
+                        ['8','9','10','11','12','13','14'],
+                        ['15','16','17','18','19','20','21'],
+                        ['22','23','24','25','26','27','28'],
+                        ['','','','','','',''],
+                    ];
+                }
+            }
+        }
+        const tableHead = ['S','M', 'T', 'W', 'T','F','S'];
+
         weekdayList.push(
             <Table>
                 <Row data={tableHead} style={styles.head} textStyle={styles.text}/>
             </Table>
         );
-        dateList.push(
-            <Table>
-                 <Rows data={tableData} style={styles.row} textStyle={styles.text}/>
-            </Table>
-                );
-        weekday.push(
-
+        for(i=0;i<16;i++){
+            dateList[i]=[
                 <Table>
-                    <Row data={tableHead} style={styles.head} textStyle={styles.text}/>
-                    <Rows data={tableData} style={styles.row} textStyle={styles.text}/>
+                    <Rows data={tableData[i]} style={styles.row} textStyle={styles.text}/>
                 </Table>
-
-        )
-        var month0 = Moment().add(0, 'months').format('MMMM YYYY');
+            ];
+        }
+        /*var month0 = Moment().add(0, 'months').format('MMMM YYYY');
         var month1 = Moment().add(1, 'months').format('MMMM YYYY');
         var month2 = Moment().add(2, 'months').format('MMMM YYYY');
         var month3 = Moment().add(3, 'months').format('MMMM YYYY');
@@ -107,28 +153,87 @@ class CalendarsScreen extends React.Component {
         var month13 = Moment().add(13, 'months').format('MMMM YYYY');
         var month14 = Moment().add(14, 'months').format('MMMM YYYY');
         var month15= Moment().add(15, 'months').format('MMMM YYYY');
-        var month16 = Moment().add(16, 'months').format('MMMM YYYY');
+        var month16 = Moment().add(16, 'months').format('MMMM YYYY');*/
 
+        /*if((month0=='July 2017')||(month0=='January 2017')||(month0=='March 2017')||(month0=='May 2017')||(month0=='August 2017')||(month0=='October 2017')||(month0=='December 2017')){
 
+             const tableData = [
+                        ['1', '2', '3', '4','5','6','7'],
+                        ['8','9','10','11','12','13','14'],
+                        ['15','16','17','18','19','20','21'],
+                        ['22','23','24','25','26','27','28'],
+                        ['29','30','31','','','',''],
+            ];
+        }
+        if((month0=='April 2017')||(month0=='June 2017')||(month0=='September 2017')||(month0=='November 2017')){
+
+                const     tableData = [
+                                ['1', '2', '3', '4','5','6','7'],
+                                ['8','9','10','11','12','13','14'],
+                                ['15','16','17','18','19','20','21'],
+                                ['22','23','24','25','26','27','28'],
+                                ['29','30','','','','',''],
+                    ];
+                }
+        if(month0=='February 2017'){
+
+             const tableData = [
+                        ['1', '2', '3', '4','5','6','7'],
+                        ['8','9','10','11','12','13','14'],
+                        ['15','16','17','18','19','20','21'],
+                        ['22','23','24','25','26','27','28'],
+                        ['29','30','31','','','',''],
+            ];
+        }*/
+/*      if((month2=='July 2017')||(month2=='January 2017')||(month2=='March 2017')||(month2=='May 2017')||(month2=='August 2017')||(month2=='October 2017')||(month2=='December 2017')){
+
+             const tableData = [
+                        ['1', '2', '3', '4','5','6','7'],
+                        ['8','9','10','11','12','13','14'],
+                        ['15','16','17','18','19','20','21'],
+                        ['22','23','24','25','26','27','28'],
+                        ['29','30','31','','','',''],
+            ];
+        }
+        if((month2=='April 2017')||(month2=='June 2017')||(month2=='September 2017')||(month2=='November 2017')){
+
+              const tableData = [
+                                ['1', '2', '3', '4','5','6','7'],
+                                ['8','9','10','11','12','13','14'],
+                                ['15','16','17','18','19','20','21'],
+                                ['22','23','24','25','26','27','28'],
+                                ['29','30','','','','',''],
+                    ];
+                }
+        if(month2=='February 2017'){
+
+            const tableData = [
+                        ['1', '2', '3', '4','5','6','7'],
+                        ['8','9','10','11','12','13','14'],
+                        ['15','16','17','18','19','20','21'],
+                        ['22','23','24','25','26','27','28'],
+                        ['29','30','31','','','',''],
+            ];
+        }*/
 
         return([
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month0},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month1},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month2},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month3},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month4},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month5},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month6},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month7},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month8},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month9},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month10},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month11},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month12},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month13},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month14},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month15},
-            {data: [{titleh:weekdayList},{titled:dateList}],key: month16},
+            {data: [{titleh:weekdayList},{titled:dateList[0]}],key: month[0]},
+            {data: [{titleh:weekdayList},{titled:dateList[1]}],key: month[1]},
+            {data: [{titleh:weekdayList},{titled:dateList[2]}],key: month[2]},
+            {data: [{titleh:weekdayList},{titled:dateList[3]}],key: month[3]},
+            {data: [{titleh:weekdayList},{titled:dateList[4]}],key: month[4]},
+            {data: [{titleh:weekdayList},{titled:dateList[5]}],key: month[5]},
+            {data: [{titleh:weekdayList},{titled:dateList[6]}],key: month[6]},
+            {data: [{titleh:weekdayList},{titled:dateList[7]}],key: month[7]},
+            {data: [{titleh:weekdayList},{titled:dateList[8]}],key: month[8]},
+            {data: [{titleh:weekdayList},{titled:dateList[9]}],key: month[9]},
+            {data: [{titleh:weekdayList},{titled:dateList[10]}],key: month[10]},
+            {data: [{titleh:weekdayList},{titled:dateList[11]}],key: month[11]},
+            {data: [{titleh:weekdayList},{titled:dateList[12]}],key: month[12]},
+            {data: [{titleh:weekdayList},{titled:dateList[13]}],key: month[13]},
+            {data: [{titleh:weekdayList},{titled:dateList[14]}],key: month[14]},
+            {data: [{titleh:weekdayList},{titled:dateList[15]}],key: month[15]},
+            //{data: [{titleh:weekdayList},{titled:dateList}],key: month},
 
 
 

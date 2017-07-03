@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Text, StyleSheet,TouchableHighlight,Alert} from 'react-native';
 import Moment from 'moment';
 
+
 export class DayItem extends Component {
     render(){
         return(
