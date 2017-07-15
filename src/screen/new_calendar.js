@@ -20,6 +20,7 @@ import { Table, TableWraper, Row, Rows, Col, Cols, Cell } from 'react-native-tab
         var ROW5 = [];
         var ROW6 = [];
         var row1List =[];
+        var month = [];
          var row2List =[];
 class NewCalendarScreen1 extends React.Component {
     static navigationOptions = {
@@ -53,7 +54,7 @@ class NewCalendarScreen1 extends React.Component {
         const { navigate } = this.props.navigation;
         var j=0;
         var k= 30;
-        var month = [];
+
         var year = [];
         var dateList = [];
         var weekdayList = [];
@@ -383,6 +384,7 @@ class NewCalendarScreen1 extends React.Component {
             const { navigate } = this.props.navigation;
             var num = String(i);
             var n = i;
+
             //Alert.alert(num);
             //Alert.alert(i);
             if(i==0){
@@ -390,7 +392,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[0]})}
                         />
                     </View>
                 })
@@ -400,7 +402,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[1]})}
                         />
                     </View>
                 })
@@ -410,7 +412,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[2]})}
                         />
                     </View>
                 })
@@ -420,7 +422,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[3]})}
                         />
                     </View>
                 })
@@ -430,7 +432,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[4]})}
                         />
                     </View>
                 })
@@ -440,7 +442,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[5]})}
                         />
                     </View>
                 })
@@ -450,7 +452,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[6]})}
                         />
                     </View>
                 })
@@ -460,7 +462,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[7]})}
                         />
                     </View>
                 })
@@ -470,7 +472,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[8]})}
                         />
                     </View>
                 })
@@ -480,7 +482,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[9]})}
                         />
                     </View>
                 })
@@ -490,7 +492,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[10]})}
                         />
                     </View>
                 })
@@ -500,7 +502,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[11]})}
                         />
                     </View>
                 })
@@ -510,7 +512,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
                         />
                     </View>
                 })
@@ -520,7 +522,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
                         />
                     </View>
                 })
@@ -530,7 +532,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
                         />
                     </View>
                 })
@@ -540,7 +542,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
                         />
                     </View>
                 })
@@ -557,7 +559,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[0]})}
                         />
                     </View>
                 })
@@ -567,7 +569,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[1]})}
                         />
                     </View>
                 })
@@ -577,7 +579,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[2]})}
                         />
                     </View>
                 })
@@ -587,7 +589,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[3]})}
                         />
                     </View>
                 })
@@ -597,7 +599,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[4]})}
                         />
                     </View>
                 })
@@ -607,7 +609,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[5]})}
                         />
                     </View>
                 })
@@ -617,7 +619,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[6]})}
                         />
                     </View>
                 })
@@ -627,7 +629,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[7]})}
                         />
                     </View>
                 })
@@ -637,7 +639,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[8]})}
                         />
                     </View>
                 })
@@ -647,7 +649,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[9]})}
                         />
                     </View>
                 })
@@ -657,7 +659,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[10]})}
                         />
                     </View>
                 })
@@ -667,7 +669,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[11]})}
                         />
                     </View>
                 })
@@ -677,7 +679,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
                         />
                     </View>
                 })
@@ -687,7 +689,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
                         />
                     </View>
                 })
@@ -697,7 +699,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
                         />
                     </View>
                 })
@@ -707,7 +709,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
                         />
                     </View>
                 })
@@ -724,7 +726,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[0]})}
                         />
                     </View>
                 })
@@ -734,7 +736,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[1]})}
                         />
                     </View>
                 })
@@ -744,7 +746,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[2]})}
                         />
                     </View>
                 })
@@ -754,7 +756,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[3]})}
                         />
                     </View>
                 })
@@ -764,7 +766,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[4]})}
                         />
                     </View>
                 })
@@ -774,7 +776,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[5]})}
                         />
                     </View>
                 })
@@ -784,7 +786,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[6]})}
                         />
                     </View>
                 })
@@ -794,7 +796,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[7]})}
                         />
                     </View>
                 })
@@ -804,7 +806,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[8]})}
                         />
                     </View>
                 })
@@ -814,7 +816,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[9]})}
                         />
                     </View>
                 })
@@ -824,7 +826,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[10]})}
                         />
                     </View>
                 })
@@ -834,7 +836,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[11]})}
                         />
                     </View>
                 })
@@ -844,7 +846,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
                         />
                     </View>
                 })
@@ -854,7 +856,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
                         />
                     </View>
                 })
@@ -864,7 +866,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
                         />
                     </View>
                 })
@@ -874,7 +876,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
                         />
                     </View>
                 })
@@ -891,7 +893,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[0]})}
                         />
                     </View>
                 })
@@ -901,7 +903,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[1]})}
                         />
                     </View>
                 })
@@ -911,7 +913,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[2]})}
                         />
                     </View>
                 })
@@ -921,7 +923,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[3]})}
                         />
                     </View>
                 })
@@ -931,7 +933,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[4]})}
                         />
                     </View>
                 })
@@ -941,7 +943,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[5]})}
                         />
                     </View>
                 })
@@ -951,7 +953,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[6]})}
                         />
                     </View>
                 })
@@ -961,7 +963,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[7]})}
                         />
                     </View>
                 })
@@ -971,7 +973,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[8]})}
                         />
                     </View>
                 })
@@ -981,7 +983,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[9]})}
                         />
                     </View>
                 })
@@ -991,7 +993,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[10]})}
                         />
                     </View>
                 })
@@ -1001,7 +1003,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[11]})}
                         />
                     </View>
                 })
@@ -1011,7 +1013,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
                         />
                     </View>
                 })
@@ -1021,7 +1023,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
                         />
                     </View>
                 })
@@ -1031,7 +1033,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
                         />
                     </View>
                 })
@@ -1041,7 +1043,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
                         />
                     </View>
                 })
@@ -1058,7 +1060,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[0]})}
                         />
                     </View>
                 })
@@ -1068,7 +1070,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[1]})}
                         />
                     </View>
                 })
@@ -1078,7 +1080,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[2]})}
                         />
                     </View>
                 })
@@ -1088,7 +1090,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[3]})}
                         />
                     </View>
                 })
@@ -1098,7 +1100,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[4]})}
                         />
                     </View>
                 })
@@ -1108,7 +1110,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[5]})}
                         />
                     </View>
                 })
@@ -1118,7 +1120,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[6]})}
                         />
                     </View>
                 })
@@ -1128,7 +1130,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[7]})}
                         />
                     </View>
                 })
@@ -1138,7 +1140,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[8]})}
                         />
                     </View>
                 })
@@ -1148,7 +1150,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[9]})}
                         />
                     </View>
                 })
@@ -1158,7 +1160,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[10]})}
                         />
                     </View>
                 })
@@ -1168,7 +1170,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[11]})}
                         />
                     </View>
                 })
@@ -1178,7 +1180,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
                         />
                     </View>
                 })
@@ -1188,7 +1190,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
                         />
                     </View>
                 })
@@ -1198,7 +1200,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
                         />
                     </View>
                 })
@@ -1208,7 +1210,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
                         />
                     </View>
                 })
@@ -1225,7 +1227,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[0]})}
                         />
                     </View>
                 })
@@ -1235,7 +1237,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[1]})}
                         />
                     </View>
                 })
@@ -1245,7 +1247,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[2]})}
                         />
                     </View>
                 })
@@ -1255,7 +1257,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[3]})}
                         />
                     </View>
                 })
@@ -1265,7 +1267,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[4]})}
                         />
                     </View>
                 })
@@ -1275,7 +1277,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[5]})}
                         />
                     </View>
                 })
@@ -1285,7 +1287,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[6]})}
                         />
                     </View>
                 })
@@ -1295,7 +1297,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[7]})}
                         />
                     </View>
                 })
@@ -1305,7 +1307,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[8]})}
                         />
                     </View>
                 })
@@ -1315,7 +1317,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[9]})}
                         />
                     </View>
                 })
@@ -1325,7 +1327,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[10]})}
                         />
                     </View>
                 })
@@ -1335,7 +1337,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[11]})}
                         />
                     </View>
                 })
@@ -1345,7 +1347,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
                         />
                     </View>
                 })
@@ -1355,7 +1357,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
                         />
                     </View>
                 })
@@ -1365,7 +1367,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
                         />
                     </View>
                 })
@@ -1375,7 +1377,7 @@ class NewCalendarScreen1 extends React.Component {
                     return <View style={styles.button_style}>
                         <Button
                             title = {name}
-                            onPress={() => navigate('TimeTable1')}
+                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
                         />
                     </View>
                 })
@@ -1454,7 +1456,20 @@ export class Row4Screen extends Component{
     }
 }
 export class TimeTableScreen extends Component{
-    static navigationOptions = {
+
+  static navigationOptions = ({ navigation }) => ({
+    title: `${navigation.state.params.date} ${navigation.state.params.month} `,
+  });
+  render() {
+    // The screen's current route is passed in to `props.navigation.state`:
+    const { params } = this.props.navigation.state;
+    return (
+      <View>
+        <Text>Chat with {params.date} </Text>
+      </View>
+    );
+  }
+   /* static navigationOptions = {
         title: "TT",
     };
     render(){
@@ -1464,7 +1479,7 @@ export class TimeTableScreen extends Component{
                 <Text>Hello</Text>
             </View>
         )
-    }
+    }*/
 }
 const styles = StyleSheet.create({
     container: {
