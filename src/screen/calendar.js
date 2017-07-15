@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {
-    Text, View, TouchableOpacity, StyleSheet, ScrollView,FlatList,SectionList,ListView,Alert,
+    Text, View, TouchableOpacity, StyleSheet, ScrollView,FlatList,SectionList,ListView,Alert,Button,
 } from 'react-native';
 import Moment from 'moment';
 import { Table, TableWraper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
-
+import { StackNavigator } from 'react-navigation';
 //npm install react-native-simple-table --save
 
-import MonthItem from './src/month_item.js';
+//import MonthItem from './src/month_item.js';
 
-class CalendarsScreen extends React.Component {
+class CalendarsScreen1 extends React.Component {
     static navigationOptions = {
         title: 'Calendars',
     };
@@ -38,6 +38,7 @@ class CalendarsScreen extends React.Component {
         );
     }
     selectionList = () => {
+        const { navigate } = this.props.navigation;
 
         /*for(i=1;i<10;i++){
             dateList.push(
@@ -208,6 +209,13 @@ class CalendarsScreen extends React.Component {
                     ];
                 }
                 else if(weekday==5){
+                    <Button
+                        onPress={() => {
+                            Alert.alert('You tapped the button!')
+                        }}
+                        title="title"
+                     />
+
                     tableData[i] = [
                         ['','','','','','1', '2'],
                         [ '3', '4','5','6','7','8','9'],
@@ -215,6 +223,7 @@ class CalendarsScreen extends React.Component {
                         ['17','18','19','20','21','22','23'],
                         ['24','25','26','27','28','29','30'],
                     ];
+
                 }
                 else if(weekday==6){
                     tableData[i] = [
@@ -233,8 +242,8 @@ class CalendarsScreen extends React.Component {
                 date = String(Moment().add(i,'months').format('DD'));
                 date1 = String(Moment().add(i,'months').subtract(date-1,'days').format('DD'));
                 weekday = String(Moment().add(i,'months').subtract(date-1,'days').weekday());
-                Alert.alert(weekday);
-                Alert.alert(date1);
+                //Alert.alert(weekday);
+                //Alert.alert(date1);
 
                 if((year%4)==0){
                  if(weekday==0){
@@ -378,6 +387,11 @@ class CalendarsScreen extends React.Component {
             dateList[i]=[
                 <Table>
                     <Rows data={tableData[i]} style={styles.row} textStyle={styles.text}/>
+                    <Button
+                        onPress={() => navigate('TimeTable1') }
+                        title="P"
+                    />
+
                 </Table>
             ];
         }
@@ -494,6 +508,19 @@ class CalendarsScreen extends React.Component {
         return monthsItem;
     }
 }
+export class TimeTableScreen extends Component{
+    static navigationOptions = {
+        title: "TT",
+    };
+    render(){
+        //const { navigate } = this.props.navigation;
+        return(
+            <View>
+                <Text>Hello</Text>
+            </View>
+        )
+    }
+}
 const styles = StyleSheet.create({
     container: {
         flex:1,
@@ -552,5 +579,10 @@ const styles = StyleSheet.create({
       row: { flex:1, width:340, height: 30, backgroundColor:'green' }
 
 });
-
+const CalendarsScreen = StackNavigator({
+    CalendarScreen_ : {screen: CalendarsScreen1},
+    TimeTable1: {screen: TimeTableScreen},
+},
+    {headerMode:'none'}
+);
 export default CalendarsScreen;

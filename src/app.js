@@ -5,6 +5,7 @@ import {
 import { StackNavigator, } from 'react-navigation';
 
 import CalendarsScreen from './screen/calendar.js';
+import NewCalendarScreen from './screen/new_calendar.js';
 import CalendarsListScreen from './screen/calendar_list.js';
 import AgendaScreen from './screen/agenda.js';
 import TimeTableScreen from './screen/time_table.js';
@@ -38,14 +39,30 @@ export class MenuScreen1 extends Component{
                     onPress={() => navigate('Calendars')}
                     title="Calendars"
                 />
+                <View>
+                    <Text>              </Text>
+                </View>
+                <Button
+                    onPress={() => navigate('NewCalendar')}
+                    title="New Calendar"
+                />
+                <View>
+                    <Text>              </Text>
+                </View>
                 <Button
                     onPress={() => navigate('CalendarsList')}
                     title="Calendar List"
                 />
+                <View>
+                    <Text>              </Text>
+                </View>
                 <Button
                     onPress={() => navigate('Agenda')}
                     title="Agenda"
                 />
+                <View>
+                    <Text>              </Text>
+                </View>
                 <Button
                     onPress={() => navigate('TimeTable')}
                     title="Time Table"
@@ -59,6 +76,7 @@ const App = StackNavigator({
     Home: { screen: HomeScreen },
     Menu: { screen: MenuScreen1},
     Calendars: { screen: CalendarsScreen},
+    NewCalendar: { screen: NewCalendarScreen},
     CalendarsList: {screen: CalendarsListScreen},
     TimeTable: {screen: TimeTableScreen},
     Agenda: {screen: AgendaScreen},

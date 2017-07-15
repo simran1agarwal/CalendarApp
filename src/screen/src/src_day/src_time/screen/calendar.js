@@ -12,7 +12,7 @@ class CalendarScreen extends React.Component {
     };
     render(){
             return(
-                <Text>CalendarScreen</Text>
+                <Text>CalendarScreen1</Text>
             );
         }
 
