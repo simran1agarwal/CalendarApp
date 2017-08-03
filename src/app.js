@@ -8,7 +8,7 @@ import CalendarsScreen from './screen/calendar.js';
 import NewCalendarScreen from './screen/new_calendar.js';
 import CalendarsListScreen from './screen/calendar_list.js';
 import AgendaScreen from './screen/agenda.js';
-import TimeTableScreen from './screen/time_table.js';
+import TimeTableRollNoScreen from './screen/time_table_roll_no.js';
 
 export default class HomeScreen extends Component {
     static navigationOptions = {
@@ -64,7 +64,7 @@ export class MenuScreen1 extends Component{
                     <Text>              </Text>
                 </View>
                 <Button
-                    onPress={() => navigate('TimeTable')}
+                    onPress={() => navigate('TimeTableRollNo')}
                     title="Time Table"
                 />
             </View>
@@ -78,7 +78,7 @@ const App = StackNavigator({
     Calendars: { screen: CalendarsScreen},
     NewCalendar: { screen: NewCalendarScreen},
     CalendarsList: {screen: CalendarsListScreen},
-    TimeTable: {screen: TimeTableScreen},
+    TimeTableRollNo: {screen: TimeTableRollNoScreen},
     Agenda: {screen: AgendaScreen},
 });
 
