@@ -62,7 +62,7 @@ class NewCalendarScreen1 extends React.Component {
         var monthArr = [];
         var tableData = [];
 
-        for(i=0;i<17;i++){
+        for(i=0;i<12;i++){
             monthArr[i]=Moment().add(i, 'months').format('MMM');
             month[i]=Moment().add(i, 'months').format('MMMM YYYY');
             //Alert.alert(monthArr[i]);
@@ -323,17 +323,6 @@ class NewCalendarScreen1 extends React.Component {
                     }
                 }
             }
-        }
-        var tableHead = ['S','M', 'T', 'W', 'T','F','S'];
-        weekdayList.push(
-        <View>
-            <Table>
-                <Row data={tableHead} style={styles.head} textStyle={styles.text}/>
-            </Table>
-        </View>
-        );
-
-        for(i=0;i<16;i++){
             dateList[i]=[
                 <View>
                     <View style={styles.container}>
@@ -359,6 +348,15 @@ class NewCalendarScreen1 extends React.Component {
                 </View>
             ];
         }
+        var tableHead = ['S','M', 'T', 'W', 'T','F','S'];
+        weekdayList.push(
+        <View>
+            <Table>
+                <Row data={tableHead} style={styles.head} textStyle={styles.text}/>
+            </Table>
+        </View>
+        );
+
 
         return([
             {data: [{titleh:weekdayList},{titled:dateList[0]}],key: month[0]},
@@ -373,11 +371,6 @@ class NewCalendarScreen1 extends React.Component {
             {data: [{titleh:weekdayList},{titled:dateList[9]}],key: month[9]},
             {data: [{titleh:weekdayList},{titled:dateList[10]}],key: month[10]},
             {data: [{titleh:weekdayList},{titled:dateList[11]}],key: month[11]},
-            {data: [{titleh:weekdayList},{titled:dateList[12]}],key: month[12]},
-            {data: [{titleh:weekdayList},{titled:dateList[13]}],key: month[13]},
-            {data: [{titleh:weekdayList},{titled:dateList[14]}],key: month[14]},
-            {data: [{titleh:weekdayList},{titled:dateList[15]}],key: month[15]},
-
         ])
     }
         row1func=(i)=>{
@@ -503,46 +496,6 @@ class NewCalendarScreen1 extends React.Component {
                         <Button
                             title = {name}
                             onPress={() => navigate('TimeTable1',{date:name, month:month[11]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==12){
-                return ROW1[12].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==13){
-                return ROW1[13].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==14){
-                return ROW1[14].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==15){
-                return ROW1[15].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
                         />
                     </View>
                 })
@@ -674,46 +627,6 @@ class NewCalendarScreen1 extends React.Component {
                     </View>
                 })
             }
-            else if(i==12){
-                return ROW2[12].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==13){
-                return ROW2[13].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==14){
-                return ROW2[14].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==15){
-                return ROW2[15].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
-                        />
-                    </View>
-                })
-            }
         }
         row3func=(i)=>{
             const { navigate } = this.props.navigation;
@@ -837,46 +750,6 @@ class NewCalendarScreen1 extends React.Component {
                         <Button
                             title = {name}
                             onPress={() => navigate('TimeTable1',{date:name, month:month[11]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==12){
-                return ROW3[12].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==13){
-                return ROW3[13].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==14){
-                return ROW3[14].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==15){
-                return ROW3[15].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
                         />
                     </View>
                 })
@@ -1008,46 +881,6 @@ class NewCalendarScreen1 extends React.Component {
                     </View>
                 })
             }
-            else if(i==12){
-                return ROW4[12].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==13){
-                return ROW4[13].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==14){
-                return ROW4[14].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==15){
-                return ROW4[15].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
-                        />
-                    </View>
-                })
-            }
         }
         row5func=(i)=>{
             const { navigate } = this.props.navigation;
@@ -1175,46 +1008,6 @@ class NewCalendarScreen1 extends React.Component {
                     </View>
                 })
             }
-            else if(i==12){
-                return ROW5[12].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==13){
-                return ROW5[13].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==14){
-                return ROW5[14].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==15){
-                return ROW5[15].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
-                        />
-                    </View>
-                })
-            }
         }
         row6func=(i)=>{
             const { navigate } = this.props.navigation;
@@ -1338,46 +1131,6 @@ class NewCalendarScreen1 extends React.Component {
                         <Button
                             title = {name}
                             onPress={() => navigate('TimeTable1',{date:name, month:month[11]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==12){
-                return ROW6[12].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[12]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==13){
-                return ROW6[13].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[13]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==14){
-                return ROW6[14].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[14]})}
-                        />
-                    </View>
-                })
-            }
-            else if(i==15){
-                return ROW6[15].map((name)=>{
-                    return <View style={styles.button_style}>
-                        <Button
-                            title = {name}
-                            onPress={() => navigate('TimeTable1',{date:name, month:month[15]})}
                         />
                     </View>
                 })
